@@ -1,0 +1,205 @@
+/* Base reset and background */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: rgb(25, 25, 50);
+    background-image: url("../../Pictures/Background_Images/Main-Window.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Main content wrapper */
+#body-section {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 6rem; /* extra bottom padding for fixed buttons */
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(2px);
+    border-radius: 14px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+#header h1 {
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-size: clamp(2rem, 3.5vw + 1rem, 3rem);
+    text-shadow: 2px 2px 4px #4c1781;
+    color: rgb(25, 25, 50);
+}
+
+/* Section titles and text */
+h2 {
+    margin: 1.5rem 0 0.5rem;
+    font-size: clamp(1.25rem, 1.2vw + 1rem, 1.75rem);
+    color: rgb(46, 61, 201);
+    text-shadow: 1px 1px 2px #4c1781;
+}
+
+p,
+li {
+    font-size: clamp(1rem, 0.6vw + 0.95rem, 1.125rem);
+    color: rgb(25, 25, 50);
+    margin: 0.5rem 0;
+}
+
+ul,
+ol {
+    padding-left: 1.25rem;
+    margin: 0.5rem 0 1rem;
+}
+
+address {
+    font-style: normal;
+    white-space: pre-line; /* preserves line breaks if present */
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+}
+
+/* Optional info blocks (use class="impressum-card") */
+.impressum-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+/* Links */
+a {
+    color: rgb(0, 92, 197);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgb(0, 72, 155);
+}
+
+a:focus-visible {
+    outline: 2px dashed rgb(0, 92, 197);
+    outline-offset: 2px;
+}
+
+/* Optional definition lists (common in legal pages) */
+dl {
+    margin: 1rem 0;
+}
+
+dt {
+    font-weight: 700;
+    margin-top: 0.75rem;
+}
+
+dd {
+    margin: 0.25rem 0 0.5rem 0;
+}
+
+/* Back button (optional: element with id="button_back") */
+#button_back {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    display: inline-grid;
+    place-items: center;
+    padding: 0.6rem 1.25rem;
+    background-color: skyblue;
+    border-radius: 12px;
+    border: 2px solid black;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.7), 0 0 25px rosybrown, 0 0 5px mistyrose;
+    z-index: 1000;
+}
+
+#button_back a,
+#button_back button {
+    color: darkgoldenrod;
+    font-size: clamp(1rem, 1.2vw + 0.8rem, 1.2rem);
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Tables (if present) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+th,
+td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    text-align: left;
+    vertical-align: top;
+    font-size: clamp(0.95rem, 0.5vw + 0.9rem, 1.05rem);
+}
+
+th {
+    background: rgba(0,0,0,0.04);
+    font-weight: 700;
+}
+
+/* Small screens: stack nicely and avoid overflow */
+@media (max-width: 600px) {
+    #body-section {
+        padding: 1.25rem 1rem 2rem;
+        border-radius: 0;
+    }
+
+    #button_back {
+        position: static;
+        display: block;
+        width: calc(100% - 2rem);
+        margin: 0.75rem auto 0;
+        text-align: center;
+    }
+}
+
+/* Print-friendly styles */
+@media print {
+    body {
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #body-section {
+        box-shadow: none;
+        background: #fff;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    #button_back {
+        display: none !important;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+}

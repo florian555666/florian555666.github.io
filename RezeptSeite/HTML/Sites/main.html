@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>RezeptSeite</title>
+</head>
+<style>
+    body {
+        position: absolute;
+        background-size: cover;
+        background-image: url("../../Pictures/Background_Images/Background_MainPage.png");
+        width: 1920px;
+        height: 1080px;
+
+        .Impressum {
+                position: fixed;
+                display: flex;
+                background-color: bisque;
+                border-radius: 15px;
+                border: black 2px solid;
+                margin-left: calc(89% + 10px);
+                margin-top: 34px;
+                padding: 10px 15px;
+                box-shadow: 1px 1px 2px palegoldenrod, 0 0 25px gold, 0 0 5px darkgoldenrod;
+            a {
+                color: darkgoldenrod;
+                font-size: 25px;
+                font-style: italic;
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;
+            }
+        }
+        #header {
+            h1 {
+                position: fixed;
+                margin-inline: calc(10% - 150px);
+                margin-top: 20px;
+                font-size: 50px;
+                text-shadow: 1px 1px 2px palegoldenrod, 0 0 20px gold, 0 0 5px darkgoldenrod;
+                text-decoration: underline;
+            }
+        }
+        #Headline {
+            p {
+                position: fixed;
+                text-decoration: underline;
+                color: darkgoldenrod;
+                background-color: skyblue;
+                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+                box-shadow: 1px 1px 2px midnightblue, 0 0 25px darkblue, 0 0 5px blue;
+                border: goldenrod 3px solid;
+                border-radius: 15px;
+                font-size: 100px;
+                font-style: italic;
+                margin-top: 140px;
+                margin-inline: calc(50% - 238px);
+                padding: 15px 15px;
+            }
+        }
+        #Ende-Text {
+            p {
+                position: fixed;
+                font-size: 25px;
+                font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+                font-weight: bold;
+                color: goldenrod;
+                background-color: skyblue;
+                border: black 1px solid;
+                text-shadow: 1px 1px 2px black, 0 0 25px deepskyblue, 0 0 5px cyan;
+                box-shadow: 1px 1px 3px black, 0 0 25px springgreen, 0 0 5px lightyellow;
+                border-radius: 15px;
+                width: 550px;
+                margin-left: calc(50% - 293px);
+                margin-top: calc(50% - 63px);
+                padding: 30px 10px;
+            }
+        }
+        #Gulasch-Text {
+            p {
+                position: fixed;
+                text-align: center;
+                color: cornflowerblue;
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: 356px;
+                margin-top: calc(30% - 70px);
+            }
+        }
+        #Steak-Text {
+            p {
+                position: fixed;
+                text-align: center;
+                color: cornflowerblue;
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: calc(60% + 48px);
+                margin-top: calc(30% - 70px);
+            }
+        }
+        table {
+            #Link-Area-Gulasch {
+                a {
+                    position: fixed;
+                    font-family: 'Courier New', Courier, monospace;
+                    font-style: italic;
+                    font-weight: bolder;
+                    text-decoration: none;
+                    color: springgreen;
+                    background-color: skyblue;
+                    border: goldenrod 1px solid;
+                    border-radius: 15px;
+                    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+                    box-shadow: 1px 1px 2px palegoldenrod, 0 0 25px gold, 0 0 5px darkgoldenrod;
+                    font-size: 50px;
+                    margin-left: calc(20% + 14px);
+                    margin-top: calc(25% - 60px);
+                    padding: 5px 30px;
+                }
+            }
+            #Link-Area-Steak {
+                a {
+                    position: fixed;
+                    font-family: 'Courier New', Courier, monospace;
+                    color: springgreen;
+                    background-color: skyblue;
+                    text-decoration: none;
+                    font-style: italic;
+                    font-weight: bolder;
+                    border: goldenrod 1px solid;
+                    border-radius: 15px;
+                    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+                    box-shadow: 1px 1px 2px palegoldenrod, 0 0 25px gold, 0 0 5px darkgoldenrod;
+                    font-size: 50px;
+                    padding: 5px 60px;
+                    margin-left: calc(65% + 5px);
+                    margin-top: calc(25% - 60px);
+                }
+            }
+        }
+    }
+</style>
+<body>
+<button class="Impressum" type="button"><a href="Impressum.html">Impressum</a></button>
+<div id="header">
+    <h1>MainPage</h1>
+</div>
+<div id="Headline">
+    <p>RezeptSeite</p>
+</div>
+<div id="Gulasch-Text">
+    <p>Weil Gulasch einfach lecker ist <3<br>Weil besser einfach anders ist :D</p>
+</div>
+<div id="Steak-Text">
+    <p>Weil Steak einfach lecker ist <3<br>Haben ist besser als brauchen :D</p>
+</div>
+<div id="Ende-Text">
+    <p>Das ist das Ende von der Website :)<br>
+        Script von Florian Partsch :)<br>
+        Hintergrund von Florian Partsch</p>
+</div>
+<table>
+    <tr><th>
+            <div id="Link-Area-Steak">
+                <a href="Steak.html">Steak</a>
+            </div>
+            <div id="Link-Area-Gulasch">
+                <a href="Gulasch.html">Gulasch</a>
+            </div>
+        </th></tr>
+</table>
+</body>
+</html>

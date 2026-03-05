@@ -1,0 +1,170 @@
+
+/* Base reset and background */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height: 1.5;
+    color: rgb(25, 25, 50);
+    background-image: url("../../Pictures/Background_Images/Main-Window.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Main content area */
+#body-section {
+    display: block;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 6rem; /* bottom padding so fixed buttons don’t overlap */
+    text-align: center;      /* centers inline-block items like the image blocks */
+}
+
+/* Heading and text blocks */
+#header h1 {
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-size: clamp(2rem, 3.5vw + 1rem, 3.5rem);
+    text-shadow: 2px 2px 4px #4c1781;
+    color: rgb(25, 25, 50);
+}
+
+#Textline1 p {
+    margin: 0.5rem auto 1rem;
+    max-width: 65ch;
+    text-align: center;
+    font-size: clamp(1.125rem, 1vw + 1rem, 1.5rem);
+    color: rgb(46, 61, 201);
+    text-shadow: 2px 2px 4px #4c1781;
+}
+
+#Textblock p {
+    margin: 0.5rem auto;
+    max-width: 65ch;
+    text-align: center;
+    font-size: clamp(1rem, 0.8vw + 0.9rem, 1.25rem);
+    color: rgb(25, 25, 50);
+    text-shadow: 1px 1px 2px #69349d;
+}
+
+/* Action buttons (Back / Impressum) */
+#button_back,
+#Impressum {
+    position: fixed;
+    bottom: 1.25rem;
+    display: inline-grid;
+    place-items: center;
+    padding: 0.75rem 1.75rem;
+    background-color: skyblue;
+    border-radius: 12px;
+    border: 2px solid black;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.7), 0 0 25px rosybrown, 0 0 5px mistyrose;
+    z-index: 1000;
+}
+
+#button_back { left: 1.25rem; }
+#Impressum  { right: 1.25rem; }
+
+#button_back a,
+#button_back button,
+#Impressum a,
+#Impressum button {
+    color: darkgoldenrod;
+    font-size: clamp(1rem, 1.2vw + 0.8rem, 1.4rem);
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Image blocks: make them responsive and aligned */
+#Gulasch,
+#Gulasch1,
+#Gulasch2 {
+    display: inline-block;           /* allows row layout and wraps on small screens */
+    vertical-align: top;
+    width: 100%;
+    max-width: 360px;                /* cap width for large screens */
+    margin: 0.75rem;
+}
+
+#Gulasch img,
+#Gulasch1 img,
+#Gulasch2 img {
+    display: block;
+    width: 100%;                     /* scale with container */
+    height: auto;                    /* keep aspect ratio */
+    border-radius: 8px;
+}
+
+/* Table styling: readable and centered */
+table {
+    margin: 2rem auto;
+    border-collapse: collapse;
+    width: min(800px, 100%);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+}
+
+table tr {
+    border: 3px solid rgba(0, 0, 0, 0.25);
+}
+
+th, td {
+    padding: 0.6rem 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: clamp(0.95rem, 0.6vw + 0.85rem, 1.1rem);
+}
+
+#Zutaten,
+#Menge {
+    text-decoration: underline;
+}
+
+#Zutaten p,
+#Menge p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+    #button_back,
+    #Impressum {
+        position: static;
+        display: block;
+        width: calc(100% - 2rem);
+        margin: 0.75rem auto;
+    }
+
+    #body-section {
+        padding-bottom: 2rem; /* less bottom padding when buttons are not fixed */
+    }
+}
+
+/* Side-by-side images on medium+ screens */
+@media (min-width: 700px) {
+    #Gulasch,
+    #Gulasch1,
+    #Gulasch2 {
+        width: calc(33.333% - 1.5rem);
+    }
+}
